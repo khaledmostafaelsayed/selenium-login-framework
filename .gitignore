@@ -1,0 +1,29 @@
+# Maven
+target/
+
+# Test Reports
+allure-results/
+allure-report/
+test-output/
+
+# Screenshots
+screenshots/
+
+# Logs
+*.log
+logs/
+
+# IDE
+.idea/
+*.iml
+
+# Environment Variables & Secrets
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+.allure/
+.vscode/

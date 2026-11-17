@@ -1,0 +1,30 @@
+{
+    "validLogins": [
+        {
+            "scenario": "Standard User",
+            "username": "standard_user",
+            "password": "secret_sauce",
+            "expectedUrl": "inventory.html"
+        }
+    ],
+    "invalidLogins": [
+        {
+            "scenario": "Invalid Username And Password",
+            "username": "invalid_user",
+            "password": "wrong_password",
+            "expectedError": "Username and password do not match"
+        },
+        {
+            "scenario": "Invalid Username",
+            "username": "invalid_user",
+            "password": "secret_sauce",
+            "expectedError": "Username and password do not match"
+        },
+        {
+            "scenario": "Invalid Password",
+            "username": "standard_user",
+            "password": "wrong_password",
+            "expectedError": "Username and password do not match"
+        }
+    ]
+}

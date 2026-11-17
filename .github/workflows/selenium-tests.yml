@@ -1,0 +1,45 @@
+
+name: Selenium UI Tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  selenium-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v7
+
+      - name: Set Up Java 21
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+
+      - name: Check Chrome Version
+        run: google-chrome --version
+
+      - name: Run Selenium Tests
+        run: mvn -B -ntp clean test -Dbrowser=chrome -Dheadless=true -Dexplicit.wait=15
+
+      - name: Upload Test Results
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: selenium-test-results
+          path: |
+            target/surefire-reports/
+            target/allure-results/
+            target/screenshots/
+            target/logs/
+          if-no-files-found: warn
+          retention-days: 7

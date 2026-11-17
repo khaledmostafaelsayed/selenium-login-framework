@@ -9,7 +9,9 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+
         <maven.compiler.release>21</maven.compiler.release>
+        <dataprovider.threads>2</dataprovider.threads>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <selenium.version>4.52.0</selenium.version>
@@ -92,7 +94,7 @@
                     <properties>
                         <property>
                             <name>dataproviderthreadcount</name>
-                            <value>2</value>
+                            <value>${dataprovider.threads}</value>
                         </property>
                     </properties>
                 </configuration>

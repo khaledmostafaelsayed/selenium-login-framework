@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import com.automation.config.ConfigReader;
 import com.automation.driver.DriverFactory;
 import com.automation.driver.DriverManager;
+import java.time.Duration;
 
 public class BaseTest {
 
@@ -25,6 +26,8 @@ public class BaseTest {
         WebDriver driver = DriverFactory.createDriver();
 
         DriverManager.setDriver(driver);
+        driver.manage().timeouts()
+                .pageLoadTimeout(Duration.ofSeconds(60));
 
         log.info("WebDriver initialized successfully");
 

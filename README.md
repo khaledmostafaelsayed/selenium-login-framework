@@ -1,3 +1,4 @@
+[![Selenium UI Tests](https://github.com/khaledmostafaelsayed/selenium-login-framework/actions/workflows/selenium-tests.yml/badge.svg)](https://github.com/khaledmostafaelsayed/selenium-login-framework/actions/workflows/selenium-tests.yml)
 # Selenium Automation Framework
 
 A Java-based test automation framework built with Selenium WebDriver, TestNG, Maven, and the Page Object Model (POM) design pattern.

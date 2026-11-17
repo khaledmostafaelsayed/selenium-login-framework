@@ -84,6 +84,7 @@
                 </configuration>
             </plugin>
 
+
             <!-- TestNG Execution -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -97,8 +98,13 @@
                             <value>${dataprovider.threads}</value>
                         </property>
                     </properties>
+
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
                 </configuration>
             </plugin>
+
 
             <!-- Allure Maven Reporting -->
             <plugin>
